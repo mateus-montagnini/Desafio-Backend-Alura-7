@@ -11,5 +11,25 @@ import java.util.Optional;
 @Service
 public class DepoimentoService {
 
+    @Autowired
+    private DepoimentoRepository depoimentoRepository;
 
+    public List<DepoimentoDTO> buscarTodosDepoimentos() {
+    }
+
+    public DepoimentoDTO buscarDepoimentoPorId() {
+
+    }
+
+    public DepoimentoDTO criarDepoimento() {
+
+    }
+
+    public DepoimentoDTO atualizarDepoimento() {
+
+    }
+
+    public DepoimentoDTO deletarDepoimento() {
+
+    }
 }
