@@ -30,11 +30,13 @@ public class DepoimentoService {
         return novoDepoimento;
     }
 
-    public Depoimento atualizarDepoimento() {
-
+    public Depoimento atualizarDepoimento(Depoimento depoimento) {
+        Depoimento depoimentoAtualizado = depoimentoRepository.save(depoimento);
+        return depoimentoAtualizado;
     }
 
-    public Depoimento deletarDepoimento() {
-
+    public Boolean deletarDepoimento(Long id) {
+        depoimentoRepository.deleteById(id);
+        return true;
     }
 }
