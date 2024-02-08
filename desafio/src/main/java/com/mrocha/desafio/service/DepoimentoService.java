@@ -25,9 +25,9 @@ public class DepoimentoService {
         return depoimentoId;
     }
 
-    public Depoimento criarDepoimento(Depoimento depoimento) {
+    public Optional<Depoimento> criarDepoimento(Depoimento depoimento) {
         Depoimento novoDepoimento = depoimentoRepository.save(depoimento);
-        return novoDepoimento;
+        return Optional.of(novoDepoimento);
     }
 
     public Depoimento atualizarDepoimento(Depoimento depoimento) {
