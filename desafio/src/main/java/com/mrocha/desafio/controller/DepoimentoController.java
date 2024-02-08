@@ -53,8 +53,13 @@ public class DepoimentoController {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
-//    @DeleteMapping
-//    public deletarDepoimento() {
-//
-//    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletarDepoimento(@PathVariable("id") Long id) {
+        boolean depoimentoDeletado = service.deletarDepoimento(id);
+        if (depoimentoDeletado) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
 }
