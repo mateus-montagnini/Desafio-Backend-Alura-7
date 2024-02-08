@@ -25,7 +25,7 @@ public class DepoimentoController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Depoimento> buscarDepoimentoPorId(@PathVariable  Long id) {
+    public ResponseEntity<Depoimento> buscarDepoimentoPorId(@PathVariable("id")  Long id) {
         Optional<Depoimento> response = service.buscarDepoimentoPorId(id);
         if (response.isPresent()) {
             return ResponseEntity.ok(response.get());
@@ -42,11 +42,17 @@ public class DepoimentoController {
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
-//    @PutMapping
-//    public atualizarDepoimento() {
-//
-//    }
-//
+    @PutMapping("/{id}")
+    public ResponseEntity<Depoimento> atualizarDepoimento(@PathVariable("id") Long id,
+                                                          @RequestBody Depoimento depoimento) {
+        Optional<Depoimento> depoimentoAtualizado = service.atualizarDepoimento(depoimento);
+        if (depoimentoAtualizado.isPresent()) {
+            return ResponseEntity.ok(depoimentoAtualizado.get());
+        }
+
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+    }
+
 //    @DeleteMapping
 //    public deletarDepoimento() {
 //
