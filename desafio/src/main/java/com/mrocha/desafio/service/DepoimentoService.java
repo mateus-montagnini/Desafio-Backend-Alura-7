@@ -30,9 +30,9 @@ public class DepoimentoService {
         return Optional.of(novoDepoimento);
     }
 
-    public Depoimento atualizarDepoimento(Depoimento depoimento) {
+    public Optional<Depoimento> atualizarDepoimento(Depoimento depoimento) {
         Depoimento depoimentoAtualizado = depoimentoRepository.save(depoimento);
-        return depoimentoAtualizado;
+        return Optional.of(depoimentoAtualizado);
     }
 
     public Boolean deletarDepoimento(Long id) {
