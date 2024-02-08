@@ -36,7 +36,11 @@ public class DepoimentoService {
     }
 
     public Boolean deletarDepoimento(Long id) {
-        depoimentoRepository.deleteById(id);
-        return true;
+        Optional<Depoimento> depoimento = depoimentoRepository.findById(id);
+        if (depoimento.isPresent()) {
+            depoimentoRepository.deleteById(id);
+            return true;
+        }
+        return false;
     }
 }
