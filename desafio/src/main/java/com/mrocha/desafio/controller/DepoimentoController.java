@@ -33,5 +33,22 @@ public class DepoimentoController {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
+    @PostMapping
+    public ResponseEntity<Depoimento> criarDepoimento(@RequestBody Depoimento depoimento) {
+        Optional<Depoimento> novoDepoimento = service.criarDepoimento(depoimento);
+        if (novoDepoimento.isPresent()) {
+            return new ResponseEntity<>(novoDepoimento.get(), HttpStatus.CREATED);
+        }
+        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+    }
 
+//    @PutMapping
+//    public atualizarDepoimento() {
+//
+//    }
+//
+//    @DeleteMapping
+//    public deletarDepoimento() {
+//
+//    }
 }
