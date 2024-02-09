@@ -62,4 +62,9 @@ public class DepoimentoController {
 
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
+
+    @GetMapping("depoimentos-home")
+    public ResponseEntity<List<Depoimento>> buscarTresDepoimentos() {
+        return ResponseEntity.ok(service.buscarTresDepoimentos());
+    }
 }
