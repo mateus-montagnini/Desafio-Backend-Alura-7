@@ -1,16 +1,11 @@
 package com.mrocha.desafio.controller;
 
 import com.mrocha.desafio.dto.DepoimentoDTO;
-import com.mrocha.desafio.model.Depoimento;
-import com.mrocha.desafio.model.DepoimentoFoto;
-import com.mrocha.desafio.service.DepoimentoFotoService;
 import com.mrocha.desafio.service.DepoimentoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.List;
